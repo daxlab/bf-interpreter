@@ -60,13 +60,11 @@ class Brainfuck(object):
 	def commaFunc(self):
 		print('Please enter a single character below.')
 		userInput = input()
-		# if len(userInput) > 1:
-		# 	self.exceptionObj.throw('Only enter one character to the input.')
 		self.programArray[self.counter] = int(userInput)
 
 	def functions(self):
 		code_dict = {
-			'.' : lambda : print(str(chr(self.programArray[self.counter]))),
+			'.' : lambda : print(str(chr(self.programArray[self.counter])), end=""),
 			'>' : lambda : self.incrementCounter(),
 			'<' : lambda : self.decrementCounter(),
 			'+' : lambda : self.incrementDeref(),
@@ -133,4 +131,3 @@ if __name__ == "__main__":
 			brainfuck.executeCode()
 		else:
 			print("This file does not exist. Check your path.")
-
